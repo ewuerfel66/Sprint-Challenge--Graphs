@@ -1,3 +1,5 @@
+import random
+
 # Note: This Queue class is sub-optimal. Why?
 class Queue():
     def __init__(self):
@@ -24,5 +26,3 @@ class Stack():
             return None
     def size(self):
         return len(self.stack)
-
-opposite_dirs = {"n": "s", "s": "n", "e": "w", "w": "e"}
