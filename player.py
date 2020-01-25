@@ -31,7 +31,8 @@ class Player:
         new_room = self.current_room.id
 
         # Add new room to graph.rooms and visited
-        graph.add_current_room(new_room, self.current_room.get_exits())
+        if new_room not in visited:
+            graph.add_current_room(new_room, self.current_room.get_exits())
 
         # Connect rooms in graph
         graph.rooms[prev_room][direction] = int(new_room)
@@ -39,10 +40,10 @@ class Player:
 
         visited.add(new_room)
 
-        print("")
-        print(f"Prev: {prev_room}, Next: {self.current_room.id}")
-        print(graph.rooms)
-        print("")
+        # print("")
+        # print(f"Prev: {prev_room}, Next: {self.current_room.id}")
+        # print(graph.rooms)
+        # print("")
 
     def follow_directions(self, graph, visited, directions, traversal_path):
         global opposite_dirs
